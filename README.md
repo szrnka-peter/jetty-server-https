@@ -1,6 +1,6 @@
 # mini-https-server
 
-A small, Java based HTTP/HTTPS web server.
+A small, Java based HTTP/HTTPS web server. ( First I created it for myself. :) ) It's very useful for local Javascript (Angular JS, Progressive Web Apps, etc.) web development.
 
 Used technologies:
 - Java 7
