@@ -2,6 +2,8 @@
 
 A small, Java based HTTP/HTTPS web server. ( First I created it for myself. :) ) It's very useful for local Javascript (Angular JS, Progressive Web Apps, etc.) web development.
 
+![Build status](https://travis-ci.org/szrnka-peter/ngAdsense.svg?branch=master)
+
 ## Used technologies
 - Java 7
 - Maven
