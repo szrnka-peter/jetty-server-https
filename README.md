@@ -3,6 +3,7 @@
 A small, Java based HTTP/HTTPS web server. ( First I created it for myself. :) ) It's very useful for local Javascript (Angular JS, Progressive Web Apps, etc.) web development.
 
 ![Build status](https://travis-ci.org/szrnka-peter/mini-http-server.svg?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/szrnka-peter/mini-http-server/badge.svg?branch=master)](https://coveralls.io/github/szrnka-peter/mini-http-server?branch=master)
 
 ## Used technologies
 - Java 7
