@@ -11,20 +11,24 @@ import hu.szrnkapeter.minihttpserver.PasswordCodingFactory.PassWordManager;
 public class PropertyUtil {
 
 	public static Config loadProperties() {
+		return loadProperties("config.properties");
+	}
+
+	public static Config loadProperties(final String propertyFile) {
 		final Config config = new Config();
 		final Properties prop = new Properties();
 		InputStream input = null;
 
-		if (!new File("config.properties").exists()) {
+		if (!new File(propertyFile).exists()) {
 			System.out.println("No configuration file exists. Server starts in HTTP mode.");
 			config.setServerPort(8080);
-			config.setServerType("HTTP");
+			config.setServerType("http");
 			config.setWwwDir(".");
 			return config;
 		}
 
 		try {
-			input = new FileInputStream("config.properties");
+			input = new FileInputStream(propertyFile);
 			prop.load(input);
 			final PassWordManager passManager = new PasswordCodingFactory(prop.getProperty("password.encrypttype")).getManager();
 
