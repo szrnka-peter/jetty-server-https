@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>hu.szrnkapeter.minihttpserver</groupId>
 	<artifactId>mini-http-server</artifactId>
-	<version>1.0.1</version>
+	<version>1.0.2-SNAPSHOT</version>
 
 	<name>mini-http-server</name>
 
