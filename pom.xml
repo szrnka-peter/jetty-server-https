@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>hu.szrnkapeter.minihttpserver</groupId>
 	<artifactId>mini-http-server</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.1</version>
 
 	<name>mini-http-server</name>
 
@@ -32,6 +32,7 @@
 		</dependency>
 	</dependencies>
 	<build>
+		<finalName>mini-http-server</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
