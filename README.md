@@ -23,6 +23,10 @@ A small, Java based HTTP/HTTPS web server. ( First I created it for myself. :) )
 - Download the sample config.properties file
 - Open the config.properties file and customize the parameters.
 
+## Generate new keystore(with Java)
+
+TODO
+
 ## Usage
 - Start the batch file or run it from command line with
 ```
