@@ -2,11 +2,17 @@ package hu.szrnkapeter.minihttpserver;
 
 import java.io.File;
 
+import org.eclipse.jetty.server.Connector;
+import org.eclipse.jetty.server.HttpConfiguration;
+import org.eclipse.jetty.server.HttpConnectionFactory;
+import org.eclipse.jetty.server.SecureRequestCustomizer;
 import org.eclipse.jetty.server.Server;
-import org.eclipse.jetty.server.ssl.SslSocketConnector;
+import org.eclipse.jetty.server.ServerConnector;
+import org.eclipse.jetty.server.SslConnectionFactory;
 import org.eclipse.jetty.servlet.DefaultServlet;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
+import org.eclipse.jetty.util.ssl.SslContextFactory;
 
 public class WebServer {
 
@@ -18,14 +24,20 @@ public class WebServer {
 		server = new Server(config.getServerPort());
 	}
 
-	private SslSocketConnector createConnector() {
-		final SslSocketConnector connector = new SslSocketConnector();
+	private Connector createConnector() {
+		SslContextFactory sslContextFactory = new SslContextFactory();
+		sslContextFactory.setKeyStorePath(config.getKeystoreLocation());
+		sslContextFactory.setKeyStorePassword(config.getTruststorePassword());
+		sslContextFactory.setTrustStorePassword(config.getTruststorePassword());
+		sslContextFactory.setTrustStorePath(config.getTruststoreLocation());
+		
+		HttpConfiguration https = new HttpConfiguration();
+		https.addCustomizer(new SecureRequestCustomizer());
+		
+		final ServerConnector connector = new ServerConnector(server,
+				new SslConnectionFactory(sslContextFactory, "http/1.1"),
+				new HttpConnectionFactory(https));
 		connector.setPort(443);
-		connector.setMaxIdleTime(30000);
-		connector.setKeystore(config.getKeystoreLocation());
-		connector.setKeyPassword(config.getKeystorePassword());
-		connector.setTrustPassword(config.getTruststorePassword());
-		connector.setTruststore(config.getTruststoreLocation());
 		return connector;
 	}
 
