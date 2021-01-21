@@ -7,7 +7,7 @@
 	<name>mini-http-server</name>
 
 	<properties>
-		<jettyVersion>9.4.34.v20201102</jettyVersion>
+		<jettyVersion>9.4.35.v20201120</jettyVersion>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
