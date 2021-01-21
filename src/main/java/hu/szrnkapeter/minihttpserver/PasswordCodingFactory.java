@@ -4,19 +4,29 @@ import java.nio.charset.StandardCharsets;
 
 import javax.xml.bind.DatatypeConverter;
 
+/**
+ * Password encoder factory
+ */
 public class PasswordCodingFactory {
 
 	/**
 	 * Concrete implementation of PasswordManager
-	 *
 	 */
 	static class Base64PasswordManager implements PassWordManager {
 
+		/*
+		 * (non-Javadoc)
+		 * @see hu.szrnkapeter.minihttpserver.PasswordCodingFactory.PassWordManager#decode(java.lang.String)
+		 */
 		@Override
 		public String decode(final String input) {
 			return new String(DatatypeConverter.parseBase64Binary(input), StandardCharsets.UTF_8);
 		}
 
+		/*
+		 * (non-Javadoc)
+		 * @see hu.szrnkapeter.minihttpserver.PasswordCodingFactory.PassWordManager#encode(java.lang.String)
+		 */
 		@Override
 		public String encode(final String input) {
 			return DatatypeConverter.printBase64Binary(input.getBytes());
@@ -24,9 +34,23 @@ public class PasswordCodingFactory {
 
 	}
 
+	
 	static interface PassWordManager {
+		
+		/**
+		 * Decodes a string
+		 * 
+		 * @param input Input encoded credential
+		 * @return Decoded password
+		 */
 		String decode(String input);
 
+		/**
+		 * Encodes a string
+		 * 
+		 * @param input Input credential
+		 * @return Encoded password
+		 */
 		String encode(String input);
 	}
 
