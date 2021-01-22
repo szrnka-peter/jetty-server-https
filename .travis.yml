@@ -1,9 +1,6 @@
 language: java
 sudo: false # faster builds
 jdk: openjdk8
-script: mvn clean install cobertura:cobertura
+script: "mvn clean install  cobertura:cobertura"
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
-cache:
-  directories:
-  - $HOME/.m2
+- bash <(curl -s https://codecov.io/bash)
