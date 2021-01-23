@@ -7,7 +7,7 @@ A small, Java based HTTP/HTTPS web server. ( First I created it for myself. :) )
 | ![Build status](https://travis-ci.org/szrnka-peter/mini-http-server.svg?branch=master) | [![codecov](https://codecov.io/gh/szrnka-peter/mini-http-server/branch/master/graph/badge.svg)](https://codecov.io/gh/szrnka-peter/mini-http-server)
 
 ## Used technologies
-- Java 7
+- Java 8
 - Maven
 - Jetty webserver
 
